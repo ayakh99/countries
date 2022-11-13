@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github pages](https://rest-countries-api-with-color-theme-switcher-ayakh99.vercel.app)
+- Live Site URL: [Vercel](https://rest-countries-api-with-color-theme-switcher-ayakh99.vercel.app)
 
 ## Process
 
