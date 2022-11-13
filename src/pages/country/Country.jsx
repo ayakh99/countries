@@ -31,7 +31,7 @@ const Country = () => {
       <Grid item xs={12} className="country__details">
         {status === 'fetching' && <CountryDetails />}
         {status === 'fetched' && country && <CountryDetails country={country} />}
-        {error && 'Failed to retrieve data. Try again later!'}
+        {error && `Failed to retrieve data. The country code "${countryid}" does not exist!`}
       </Grid>
     </Grid>
   );
