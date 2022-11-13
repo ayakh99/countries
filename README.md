@@ -45,7 +45,6 @@ Users should be able to:
 - React.js
 - [MUI](https://mui.com)
 - SASS
-- Express.js
 
 ### Useful resources
 
