@@ -17,7 +17,7 @@ const CountryCard = ({ country }) => {
               alt={country.name.common}
               className="country__flag"
             />
-            <CardContent className="country__content">
+            <CardContent component="article" className="country__content">
               <h1 className="country__name">{country.name.common}</h1>
               <List className="country__info">
                 <ListItem disablePadding>

@@ -6,9 +6,7 @@ import './layout.scss';
 const Layout = () => {
   return (
     <Box>
-      <header>
-        <Topbar />
-      </header>
+      <Topbar />
 
       <main className="content__wrapper">
         <Box className="content">
