@@ -68,7 +68,7 @@ const CountryDetails = ({ country }) => {
                   <Grid item flex={1} className="details__sublist">
                     <ListItem disablePadding>
                       <span className="details__field">Top Level Domain: </span>
-                      {country.tld[0]}
+                      {country.tld.join(', ')}
                     </ListItem>
 
                     <ListItem disablePadding>
