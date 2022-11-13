@@ -35,10 +35,17 @@ const CountryDetails = ({ country }) => {
               <List>
                 <Grid container className="details__list">
                   <Grid item flex={1} className="details__sublist">
-                    <ListItem disablePadding>
-                      <span className="details__field">Native Name(s): </span>
-                      {getField(country.name.nativeName, 'common')}
-                    </ListItem>
+                    {country.name.nativeName ? (
+                      <ListItem disablePadding>
+                        <span className="details__field">Native Name: </span>
+                        {getField(country.name.nativeName, 'common')}
+                      </ListItem>
+                    ) : (
+                      <ListItem disablePadding>
+                        <span className="details__field">Offical Name: </span>
+                        {country.name.official}
+                      </ListItem>
+                    )}
 
                     <ListItem disablePadding>
                       <span className="details__field">Population: </span>
@@ -66,20 +73,26 @@ const CountryDetails = ({ country }) => {
                   </Grid>
 
                   <Grid item flex={1} className="details__sublist">
-                    <ListItem disablePadding>
-                      <span className="details__field">Top Level Domain: </span>
-                      {country.tld.join(', ')}
-                    </ListItem>
+                    {country.tld && (
+                      <ListItem disablePadding>
+                        <span className="details__field">Top Level Domain: </span>
+                        {country.tld.join(', ')}
+                      </ListItem>
+                    )}
 
-                    <ListItem disablePadding>
-                      <span className="details__field">Currencies: </span>
-                      {getField(country.currencies, 'name')}
-                    </ListItem>
+                    {country.currencies && (
+                      <ListItem disablePadding>
+                        <span className="details__field">Currencies: </span>
+                        {getField(country.currencies, 'name')}
+                      </ListItem>
+                    )}
 
-                    <ListItem disablePadding>
-                      <span className="details__field">Languages: </span>
-                      {getField(country.languages)}
-                    </ListItem>
+                    {country.languages && (
+                      <ListItem disablePadding>
+                        <span className="details__field">Languages: </span>
+                        {getField(country.languages)}
+                      </ListItem>
+                    )}
                   </Grid>
                 </Grid>
               </List>
