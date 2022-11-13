@@ -1,0 +1,21 @@
+.loading,
+.error {
+  align-self: center;
+  margin: 5rem;
+}
+
+.error {
+  &__icon {
+    display: flex;
+    margin-right: 1rem;
+  }
+}
+
+.button {
+  color: inherit;
+  text-transform: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+}

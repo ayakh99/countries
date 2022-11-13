@@ -1,0 +1,14 @@
+.content {
+  padding-block: 12rem;
+  min-height: 100vh;
+  max-width: 144rem;
+  margin: 0 auto;
+
+  @media screen and (max-width: 56.25em) {
+    padding-block: 14rem;
+  }
+
+  &__wrapper {
+    background-color: var(--background);
+  }
+}

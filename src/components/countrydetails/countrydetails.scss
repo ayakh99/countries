@@ -1,0 +1,50 @@
+.details {
+  align-items: center;
+  justify-content: space-between;
+  gap: 11rem;
+
+  @media screen and (max-width: 56.25em) {
+    align-items: flex-start;
+  }
+
+  &__text {
+    gap: 3rem;
+
+    @media screen and (max-width: 56.25em) {
+      gap: 2rem;
+    }
+  }
+
+  &__name {
+    font-size: 3rem;
+    font-weight: var(--fw-800);
+  }
+
+  &__flag {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  & .MuiListItem-root {
+    display: inline-block;
+  }
+
+  &__list {
+    gap: 8rem;
+
+    @media screen and (max-width: 72em) {
+      flex-direction: column;
+      gap: 5rem;
+    }
+  }
+
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__field {
+    font-weight: var(--fw-600);
+  }
+}

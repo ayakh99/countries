@@ -1,0 +1,21 @@
+.country {
+  padding: 3rem 8rem;
+  font-size: 1.6rem;
+  gap: 8rem;
+
+  @media screen and (max-width: 56.25em) {
+    padding-inline: 5.4rem;
+  }
+
+  &__button {
+    font-size: 1.4rem;
+    font-weight: var(--fw-300);
+    padding-inline: 3.2rem;
+    box-shadow: var(--shadow-dark);
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,54 @@
+.filter {
+  &__select {
+    width: 100%;
+    background-color: var(--card);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    font-size: inherit;
+    color: inherit;
+
+    @media screen and (max-width: 56.25em) {
+      font-size: 1.2rem;
+    }
+
+    & .MuiSelect-select {
+      padding: 2.05rem 2.4rem;
+
+      @media screen and (max-width: 56.25em) {
+        padding-block: 1.85rem;
+      }
+    }
+
+    & .MuiOutlinedInput-notchedOutline {
+      border: none;
+      outline: none;
+    }
+
+    & .MuiSvgIcon-root {
+      right: 2rem;
+    }
+  }
+
+  &__option {
+    font-size: inherit;
+    padding: 0.5rem 2.4rem;
+
+    @media screen and (max-width: 56.25em) {
+      min-height: 0;
+      font-size: 1.2rem;
+    }
+
+    &:hover,
+    &.Mui-selected {
+      background-color: hsla(0, 0%, 52%, 0.2);
+    }
+
+    &.Mui-selected:hover {
+      background-color: hsla(0, 0%, 52%, 0.3);
+    }
+  }
+}
+
+#menu ul {
+  padding-block: 0.3rem;
+}

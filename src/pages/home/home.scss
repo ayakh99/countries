@@ -1,0 +1,38 @@
+.home {
+  &__filtering {
+    justify-content: space-between;
+    gap: 4rem;
+    padding-inline: 8rem;
+
+    @media screen and (max-width: 56.25em) {
+      padding-inline: 2rem;
+    }
+  }
+
+  &__countries {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 8rem;
+
+    @media screen and (max-width: 56.25em) {
+      padding-inline: 5.4rem;
+    }
+  }
+
+  &__loading {
+    align-self: center;
+    margin: 5rem;
+  }
+
+  &__pagination {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+
+    &__list,
+    &__item {
+      font-size: inherit;
+      color: inherit;
+    }
+  }
+}

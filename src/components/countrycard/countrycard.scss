@@ -1,0 +1,36 @@
+.country {
+  &__card {
+    background-color: var(--card);
+    box-shadow: var(--shadow);
+  }
+
+  &__content {
+    padding: 2.5rem;
+  }
+
+  &__flag {
+    object-fit: cover;
+    height: 16rem;
+  }
+
+  &__name {
+    font-weight: var(--fw-800);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__info {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    & .MuiListItem-root {
+      display: inline-block;
+    }
+  }
+
+  &__field {
+    font-weight: var(--fw-600);
+  }
+}

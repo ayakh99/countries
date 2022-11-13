@@ -1,0 +1,53 @@
+.search {
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  padding: 1.6rem 2.8rem;
+
+  @media screen and (max-width: 56.25em) {
+    padding-block: 1.4rem;
+  }
+
+  box-shadow: var(--shadow);
+  font-weight: var(--fw-600);
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    & .MuiSvgIcon-root {
+      font-size: 2.4rem;
+
+      @media screen and (max-width: 56.25em) {
+        font-size: 2rem;
+      }
+      fill: var(--input);
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--input);
+    font: inherit;
+    width: 100%;
+
+    @media screen and (max-width: 56.25em) {
+      font-size: 1.2rem;
+    }
+
+    & > input {
+      color: inherit;
+    }
+  }
+}
