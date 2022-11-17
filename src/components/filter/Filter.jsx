@@ -6,7 +6,8 @@ import './filter.scss';
 
 const Filter = ({ region, setRegion }) => {
   const handleChange = (event) => {
-    setRegion(event.target.value);
+    if (event.target.value === 'All') setRegion('');
+    else setRegion(event.target.value);
   };
 
   const { darkmode } = useContext(DarkModeContext);
@@ -29,7 +30,7 @@ const Filter = ({ region, setRegion }) => {
     return <ExpandMoreIcon className={props.className} />;
   };
 
-  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+  const regions = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania', 'All'];
 
   return (
     <Grid item md={2} xs={12}>
