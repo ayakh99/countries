@@ -7,6 +7,7 @@ import './countrydetails.scss';
 const CountryDetails = ({ country }) => {
   const getField = (prop, subprop) => {
     const field = [];
+    // eslint-disable-next-line no-unused-vars
     for (const [key, value] of Object.entries(prop)) {
       subprop ? field.push(value[subprop]) : field.push(value);
     }
@@ -14,8 +15,8 @@ const CountryDetails = ({ country }) => {
   };
 
   return (
-    <Grid container direction={{ md: 'row', xs: 'column' }} className="details">
-      <Grid item flex={1}>
+    <Grid container className="details">
+      <Grid item flex={1} width="100%" className="flag">
         {country ? (
           <Box
             component="img"
@@ -27,7 +28,7 @@ const CountryDetails = ({ country }) => {
           <FlagSkeleton />
         )}
       </Grid>
-      <Grid item flex={1}>
+      <Grid item flex={1} width="100%">
         <Grid container direction="column" className="details__text">
           {country ? (
             <>

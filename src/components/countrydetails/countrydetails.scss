@@ -5,6 +5,7 @@
 
   @media screen and (max-width: 56.25em) {
     align-items: flex-start;
+    flex-direction: column;
   }
 
   &__text {
