@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github pages](https://ayakh99.github.io/rest-countries-api-with-color-theme-switcher.com)
+- Live Site URL: [Vercel](https://rest-countries-api-with-color-theme-switcher-ayakh99.vercel.app)
 
 ## Process
 
@@ -45,7 +45,6 @@ Users should be able to:
 - React.js
 - [MUI](https://mui.com)
 - SASS
-- Express.js
 
 ### Useful resources
 
