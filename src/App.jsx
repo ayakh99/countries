@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
@@ -12,6 +12,11 @@ import './style/common.scss';
 function App() {
   const { darkmode } = useContext(DarkModeContext);
 
+  const [results, setResults] = useState([]);
+  const [region, setRegion] = useState('');
+  const [term, setTerm] = useState('');
+  const [resPage, setResPage] = useState(false);
+
   return (
     <StyledEngineProvider injectFirst>
       <Box className={darkmode ? 'app dark' : 'app'}>
@@ -20,7 +25,23 @@ function App() {
             <Route exact path="/" element={<Navigate to="countries" />} />
 
             <Route path="countries" element={<Layout />}>
-              <Route index element={<Home />} />
+              <Route
+                index
+                element={
+                  <Home
+                    states={{
+                      results,
+                      setResults,
+                      region,
+                      setRegion,
+                      term,
+                      setTerm,
+                      resPage,
+                      setResPage,
+                    }}
+                  />
+                }
+              />
               <Route path=":countryid" element={<Country />} />
             </Route>
           </Routes>
