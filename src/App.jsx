@@ -15,7 +15,6 @@ function App() {
   const [results, setResults] = useState([]);
   const [region, setRegion] = useState('');
   const [term, setTerm] = useState('');
-  const [resPage, setResPage] = useState(false);
 
   return (
     <StyledEngineProvider injectFirst>
@@ -36,8 +35,6 @@ function App() {
                       setRegion,
                       term,
                       setTerm,
-                      resPage,
-                      setResPage,
                     }}
                   />
                 }

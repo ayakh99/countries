@@ -9,47 +9,40 @@ import './home.scss';
 
 const Home = ({ states }) => {
   const { status, data: countries, error } = useFetch('https://restcountries.com/v3.1/all');
-  const { results, setResults, region, setRegion, term, setTerm, resPage, setResPage } = states;
+  const { results, setResults, region, setRegion, term, setTerm } = states;
 
-  const navigate = useNavigate();
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const page = parseInt(query.get('page') || '1');
 
+  const navigate = useNavigate();
+  const resetPage = () => {
+    navigate('/countries', { replace: true });
+  };
+
   useEffect(() => {
-    if (term || region) {
-      // first search or filter || combined search and filter || adding to a pre-exiting search or filter
-      if (!resPage || (term && region) || (resPage && (!term || !region))) {
-        navigate('/countries', { replace: true });
-      }
-      setResPage(true);
+    if (status === 'fetched') {
+      const handleSearch = () => {
+        setResults(
+          countries.filter((c) => {
+            const match =
+              c.name.common.includes(term) || c.name.common.toLowerCase().includes(term);
+            if (region) {
+              return match && c.region === region;
+            }
+            return match;
+          })
+        );
+      };
+
+      const handleFilter = () => {
+        setResults(countries.filter((c) => c.region === region));
+      };
+
+      if (region) handleFilter();
+      if (term) handleSearch();
     }
-
-    // no search or filtering anymore
-    if (!term && !region && resPage) {
-      navigate('/countries', { replace: true });
-      setResPage(false);
-    }
-
-    const handleSearch = () => {
-      setResults(
-        countries.filter((c) => {
-          const match = c.name.common.includes(term) || c.name.common.toLowerCase().includes(term);
-          if (region) {
-            return match && c.region === region;
-          }
-          return match;
-        })
-      );
-    };
-
-    const handleFilter = () => {
-      setResults(countries.filter((c) => c.region === region));
-    };
-
-    handleFilter();
-    handleSearch();
-  }, [term, region, setResults, countries, resPage, setResPage, navigate]);
+  }, [term, region, setResults, countries, status]);
 
   const theme = useTheme();
   const matchesBreakpoint = useMediaQuery(theme.breakpoints.up('md'));
@@ -58,8 +51,8 @@ const Home = ({ states }) => {
     <Grid container direction="column" className="home">
       <Grid item>
         <Grid container className="home__filtering">
-          <Search term={term} setTerm={setTerm} />
-          <Filter region={region} setRegion={setRegion} />
+          <Search term={term} setTerm={setTerm} resetPage={resetPage} />
+          <Filter region={region} setRegion={setRegion} resetPage={resetPage} />
         </Grid>
       </Grid>
       <Grid item className="home__countries">

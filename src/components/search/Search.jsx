@@ -2,9 +2,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import { Box, FormControl, Grid, InputBase } from '@mui/material';
 import './search.scss';
 
-const Search = ({ term, setTerm }) => {
+const Search = ({ term, setTerm, resetPage }) => {
   const handleChange = (event) => {
     setTerm(event.target.value);
+    resetPage();
   };
 
   return (

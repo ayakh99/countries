@@ -4,10 +4,11 @@ import { FormControl, Grid, MenuItem, OutlinedInput, Select } from '@mui/materia
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './filter.scss';
 
-const Filter = ({ region, setRegion }) => {
+const Filter = ({ region, setRegion, resetPage }) => {
   const handleChange = (event) => {
     if (event.target.value === 'All') setRegion('');
     else setRegion(event.target.value);
+    resetPage();
   };
 
   const { darkmode } = useContext(DarkModeContext);
