@@ -1,15 +1,13 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Countries",
+  "name": "REST Countries API with Color Theme Switcher",
   "icons": [
     {
       "src": "favicon.png",
-      "sizes": "64x64",
+      "sizes": "32x32",
       "type": "image/png"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "display": "standalone"
 }
